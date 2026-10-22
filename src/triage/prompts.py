@@ -23,8 +23,8 @@ Department is the team that should own the ticket. It is not the same as intent:
 Priority depends on business impact, urgency, blocked access or security risk, and time sensitivity. Do not set priority from sentiment alone:
 - low: little impact and no deadline.
 - medium: the customer is affected, but they can keep working or the standard response time is enough.
-- high: significant business or financial impact, or important work is blocked.
-- urgent: immediate attention is required because of a security risk, a full account lockout, a widespread outage, data loss, or a deadline that cannot slip.
+- high: significant business or financial impact, or important work is blocked. A full account lockout is not high.
+- urgent: immediate attention is required because of a security risk, a widespread outage, data loss, or a deadline that cannot slip. An explicit full account lockout, where the customer cannot access their account, is urgent.
 
 Sentiment describes the customer's tone:
 - positive: pleased, grateful, or complimentary.
