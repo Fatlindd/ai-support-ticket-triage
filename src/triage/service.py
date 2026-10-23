@@ -8,11 +8,11 @@ from openai import (
 )
 
 from triage.errors import TriageConfigurationError, TriageUnavailableError
-from triage.models import TicketInput, TicketTriageResult
+from triage.models import TicketInput, TicketTriageResult, TriageRunResult
 from triage.prompts import TRIAGE_SYSTEM_PROMPT
 
 
-def triage_ticket(ticket: TicketInput, client: OpenAI) -> TicketTriageResult:
+def triage_ticket(ticket: TicketInput, client: OpenAI) -> TriageRunResult:
     try:
         response = client.responses.parse(
             model="gpt-4.1-mini",
@@ -28,4 +28,9 @@ def triage_ticket(ticket: TicketInput, client: OpenAI) -> TicketTriageResult:
     if response.output_parsed is None:
         raise ValueError("Model response did not include a parsed triage result.")
 
-    return response.output_parsed
+    return TriageRunResult(
+        result=response.output_parsed,
+        input_tokens=response.usage.input_tokens,
+        output_tokens=response.usage.output_tokens,
+        total_tokens=response.usage.total_tokens,
+    )

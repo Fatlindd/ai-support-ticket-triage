@@ -44,3 +44,10 @@ class TicketTriageResult(BaseModel):
     priority: Priority
     sentiment: Sentiment
     summary: str
+
+
+class TriageRunResult(BaseModel):
+    result: TicketTriageResult
+    input_tokens: int
+    output_tokens: int
+    total_tokens: int

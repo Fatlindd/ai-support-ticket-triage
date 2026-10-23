@@ -33,10 +33,14 @@ tickets = [
 
 for ticket in tickets:
     print(ticket.subject)
-    result = triage_ticket(ticket, client)
+    run = triage_ticket(ticket, client)
+    result = run.result
     print(result.intent)
     print(result.department)
     print(result.priority)
     print(result.sentiment)
     print(result.summary)
+    print(run.input_tokens)
+    print(run.output_tokens)
+    print(run.total_tokens)
     print("---")
