@@ -6,7 +6,7 @@ from triage.service import triage_ticket
 
 load_dotenv()
 
-client = OpenAI()
+client = OpenAI(max_retries=2, timeout=20.0)
 
 ticket = TicketInput(
     subject="Duplicate charge",
