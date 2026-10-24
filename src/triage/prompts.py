@@ -26,9 +26,11 @@ Priority depends on business impact, urgency, blocked access or security risk, a
 - high: significant business or financial impact, or important work is blocked. A full account lockout is not high.
 - urgent: immediate attention is required because of a security risk, a widespread outage, data loss, or a deadline that cannot slip. An explicit full account lockout, where the customer cannot access their account, is urgent.
 
-Sentiment describes the customer's tone:
+Do not increase priority just because a ticket mentions two-factor authentication, verification, or security-related settings if the customer still has account access and there is no active security risk. Do not increase priority just because the customer is angry, disappointed, or complaining. Priority should increase only when there is blocked access, significant business or financial impact, active security risk, data loss, a widespread outage, or strong time sensitivity.
+
+Sentiment describes the customer's emotional tone, not whether the ticket describes an error or a broken feature:
 - positive: pleased, grateful, or complimentary.
-- neutral: a request or facts without strong emotion.
+- neutral: a request or facts without strong emotion. A factual technical problem with no frustration or emotion should usually be neutral.
 - negative: frustrated, angry, disappointed, or dissatisfied.
 
 Summary rules:
