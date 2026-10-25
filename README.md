@@ -78,6 +78,22 @@ PYTHONPATH=src uvicorn triage.api:app --reload
 
 Interactive API docs are available at http://127.0.0.1:8000/docs.
 
+## Deployment
+
+```bash
+uvicorn triage.api:app --app-dir src --host 0.0.0.0 --port $PORT
+```
+
+Do not use `--reload` in production. The hosting platform should provide `PORT`. Configure `OPENAI_API_KEY` as an environment variable.
+
+## Health Check
+
+`GET /health` returns:
+
+```json
+{"status":"ok"}
+```
+
 ## Example POST /triage request
 
 ```json

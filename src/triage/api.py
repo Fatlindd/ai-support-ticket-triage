@@ -11,6 +11,11 @@ load_dotenv()
 app = FastAPI(title="AI Support Ticket Triage API")
 
 
+@app.get("/health")
+def health() -> dict[str, str]:
+    return {"status": "ok"}
+
+
 @app.post("/triage", response_model=TriageRunResult)
 def triage(ticket: TicketInput) -> TriageRunResult:
     client = OpenAI()
